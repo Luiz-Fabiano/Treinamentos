@@ -1,0 +1,56 @@
+﻿@using TreinaWeb.MVC.Web.Models
+@model Pessoa
+@{
+    /**/
+
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<br />
+<br />
+@using (Html.BeginForm("Index", "Teste", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="row">
+        <div class="col-sm-2 col-md-2 col-sm-2">
+            @Html.LabelFor(p => p.Nome)
+        </div>
+        <div class="col-sm-12 col-md-8 col-sm-6">
+            @Html.EditorFor(p => p.Nome, new { htmlAttributes = new { id = "txbNome", @class = "form-control" } })
+            @Html.ValidationMessageFor(p => p.Nome)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 col-md-2 col-sm-2">
+            @Html.LabelFor(p => p.Idade)
+        </div>
+        <div class="col-sm-12 col-md-8 col-sm-6">
+            @Html.EditorFor(p => p.Idade, new { htmlAttributes = new { id = "txbIdade", @class = "form-control" } })
+            @Html.ValidationMessageFor(p => p.Idade)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 col-md-2 col-sm-2">
+            @Html.LabelFor(p => p.Endereco)
+        </div>
+        <div class="col-sm-12 col-md-8 col-sm-6">
+            @Html.EditorFor(p => p.Endereco, new { htmlAttributes = new { id = "txbEndereco", @class = "form-control" } })
+            @Html.ValidationMessageFor(p => p.Endereco)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 col-md-2 col-sm-2">
+            @Html.LabelFor(p => p.Email)
+        </div>
+        <div class="col-sm-12 col-md-8 col-sm-6">
+            @Html.EditorFor(p => p.Email, new { htmlAttributes = new { id = "txbEmail", @class = "form-control" } })
+            @Html.ValidationMessageFor(p => p.Email)
+        </div>
+    </div>
+    <div class="row">
+        <input type="submit" value="Enviar" class="btn btn-primary" />
+    </div>
+}

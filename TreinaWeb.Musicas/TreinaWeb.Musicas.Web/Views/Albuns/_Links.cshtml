@@ -1,0 +1,8 @@
+﻿@model TreinaWeb.Musicas.Web.ViewModels.Album.AlbumExibicaoViewModel
+
+@Html.ActionLink("Details", "Details", new { id = Model.ID }) |
+@if (User.IsInRole("Administrador"))
+{
+    <a href="@Url.Action("Edit", "Albuns", new { id = Model.ID })">Edit | </a>
+    <a href="@Url.Action("Delete", "Albuns", new { id = Model.ID })">Delete</a>
+}

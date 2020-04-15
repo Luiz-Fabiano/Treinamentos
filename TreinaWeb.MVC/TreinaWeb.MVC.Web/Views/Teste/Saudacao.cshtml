@@ -1,0 +1,17 @@
+﻿@using TreinaWeb.MVC.Web.Models
+@model Pessoa
+@{
+    ViewBag.Title = "Saudacao";
+}
+
+<h2>Saudacao</h2>
+
+<p>Olá, seja bem vindo @Model.Nome</p>
+@Html.LabelFor(p => p.Idade)
+@Html.EditorFor(p => p.Idade)
+
+@Html.LabelFor(p => p.Endereco)
+@Html.EditorFor(p => p.Endereco)
+
+@Html.LabelFor(p => p.Email)
+@Html.EditorFor(p => p.Email)
